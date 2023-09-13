@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>놀이터</title>
-    <link rel="stylesheet" href="CSS/myPage.css">
+    <link rel="stylesheet" href="CSS/editProfile.css">
     <style>
         @font-face {
             font-family: 'SegoeUI_online_security';
@@ -174,280 +174,235 @@
         <!--메인 시작-->
         <span id="rootContent">
             <router-outlet></router-outlet>
-            <user-header>
-                <div id="dkContent" class="cont_mypage">
+            <ng-component>
+                <div id="dkContent" class="cont_declare">
                     <div id="mArticle">
-                        <div class="mypage_cont">
-                            <h2 class="screen_out">마이페이지</h2>
-                            <div data-tiara-layer="user" class="group_profile">
-                                <h3 class="screen_out">내 프로필 정보</h3>
-                                <div class="area_name">
-                                    <div class="link_myprofile">
-                                        <strong class="txt_nick">학생/교사</strong>
-                                        <div class="box_name">
-                                            <strong class="txt_name"> 닉네임 </strong>
-                                        </div>
-                                    </div>
+                        <h2 id="dkBody" class="screen_out">프로필 설정</h2>
+                        <div class="wrap_project wrap_profile">
+                            <div class="cont_thumb">
+                                <div class="file_upload">
+                                    <img profileimagecheck="" alt="프로필" class="img_thumb" src="https://t1.kakaocdn.net/together_image/common/avatar/avatar04.png">
+                                    <label class="lab_photo">
+                                        <span class="ico_together ico_photo">사진첨부</span>
+                                    </label>
                                 </div>
-                                <div class="area_thumb">
-                                    <a routerlink="badges" data-tiara-layer="talk_badge" data-tiara-action-name="스탬프_클릭" class="link_badge" href="/my/badges">
-                                        <span class="badge_thumb">
-                                            <img class="img_thumb" src="https://mud-kage.kakaocdn.net/dn/cdS2zq/btqcKJyBiPS/SDkrVVYcKkxHXkcD8l68i0/img.png" alt="카카오같이가치에 오신 것을 환영합니다! 세상의 변화를 만드는 활동에 함께해요.">
-                                        </span>
-                                    </a>
-                                    <a data-tiara-layer="profile_img" data-tiara-action-name="프로필수정_클릭" class="link_thumb" href="/preferences/profile">
-                                        <span class="profile_thumb">
-                                            <img profileimagecheck="" alt="프로필 사진" class="img_thumb" src="https://t1.kakaocdn.net/together_image/common/avatar/avatar04.png">
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="area_setting">
-                                    <a data-tiara-layer="setting" data-tiara-action-name="설정_클릭" routerlink="/preferences" class="link_setting" href="/preferences">
-                                        <span class="screen_out">프로필</span> 설정
-                                    </a>
-                                </div>
+                                <input type="file" id="profileInput" ngfileselect="" class="tf_attach" style="display: none;" accept="image/*, .jpg, .jpeg, .png, .gif, .bmp">
                             </div>
-                            <router-outlet></router-outlet>
-                            <user-profile>
-                                <div class="group_shadow group_donatedetail">
-                                    <h3 class="tit_section section_type2">기부내역</h3>
-                                    <button type="button" class="link_round btn_release"> 비공개 </button>
-                                    <div class="area_donatedetail">
-                                        <div class="total_donate">
-                                            <strong class="tit_total">총 기부금</strong>
-                                            <span class="num_total">0원</span>
+                            <div class="box_cont">
+                                <dl class="list_write">
+                                    <dt aria-hidden="true" class="screen_out"> 카카오톡 프로필 정보 불러오기 </dt>
+                                    <dd class="item_btn">
+                                        <button type="button" class="btn_katalk">
+                                            <span class="ico_together ico_katalk"></span>카카오톡 프로필 정보 불러오기 </button>
+                                    </dd>
+                                    <dt>닉네임</dt>
+                                    <dd>
+                                        <div class="group_tf">
+                                            <label for="subTitle" class="screen_out">닉네임</label>
+                                            <input classoutline="" type="text" id="subTitle" maxlength="20" class="tf_write ng-untouched ng-pristine ng-valid">
                                         </div>
-                                        <div class="detail_donate">
-                                            <ul class="list_detail">
-                                                <li>
-                                                    <span class="tit_detail">기부횟수</span>
-                                                    <span class="num_detail">0회</span>
-                                                </li>
-                                                <li>
-                                                    <span class="tit_detail">직접기부</span>
-                                                    <span class="num_detail">0원</span>
-                                                </li><li><span class="tit_detail">참여기부</span>
-                                                <span class="num_detail">0원</span>
-                                            </li>
-                                            </ul>
+                                        <div class="info_append">
+                                            <span class="screen_out">입력된 글자수 : </span>
+                                            <span class="txt_num">2/</span>20
                                         </div>
-                                    </div>
-                                    <div data-tiara-layer="donation" class="area_moreinfo">
-                                        <ul class="list_moreinfo">
-                                            <li>
-                                                <a routerlink="donations" data-tiara-layer="list" data-tiara-action-name="기부내역_클릭" class="link_more" href="/my/donations"> 기부내역 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="receipts" data-tiara-layer="receipts" data-tiara-action-name="기부금영수증_클릭" class="link_more" href="/my/receipts"> 기부금 영수증 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="certification" data-tiara-layer="certificate" data-tiara-action-name="활동증서_클릭" class="link_more" href="/my/certification"> 활동증서 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="coupons" data-tiara-layer="coupon" data-tiara-action-name="가부쿠폰_클릭" class="link_more" href="/my/coupons"> 기부쿠폰 </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <user-fundraising-list></user-fundraising-list>
-                                <user-volunteer-list></user-volunteer-list>
-                                <user-profile-applicants></user-profile-applicants>
-                                <user-profile-actions data-tiara-layer="my">
-                                    <a href="" class="group_shadow group_action_before">
-                                        <strong class="tit_action">더 나은 세상을 위해<br>함께 할 수 있는 일이 있어요!</strong>
-                                        <p class="desc_action">지금 모두의행동이 진행중입니다</p>
-                                        <span class="box_thumbnail">
-                                            <img src="//t1.kakaocdn.net/together_image/my_action.png" alt="" class="img_thumb">
-                                        </span>
-                                        <span class="link_round">행동하기</span>
-                                    </a>
-                                </user-profile-actions>
-                                <user-big-five>
-                                    <div class="group_shadow group_mypersonality">
-                                        <div class="part_analysis">
-                                            <h3 class="tit_section section_type6">나의 성격 (Big 5)</h3>
-                                            <span class="screen_out">종합분석 타이틀 리스트</span>
-                                            <div class="area_analysis">
-                                                <ul class="list_analysis">
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/1">
-                                                            <strong class="tit_analysis"> 개방성 <span class="sub_analysis">Openness to Experience</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color1">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/2">
-                                                            <strong class="tit_analysis"> 성실성 <span class="sub_analysis">Conscientiousness</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color2">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/3">
-                                                            <strong class="tit_analysis"> 외향성 <span class="sub_analysis">Extraversion</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color3">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/4">
-                                                            <strong class="tit_analysis"> 우호성 <span class="sub_analysis">Agreeableness</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color4">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/5">
-                                                            <strong class="tit_analysis"> 신경증 <span class="sub_analysis">Neuroticism</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color5">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <span class="indicate_boundary boundary_low" style="left: 30%;"><span class="line_info"></span> 낮음 </span>
-                                                <span class="indicate_boundary boundary_high" style="left: 70%;"><span class="line_info"></span> 높음 </span>
+                                    </dd>
+                                    <div class="bg_dashline"></div>
+                                    <profile-edit>
+                                        <dt> 연락처 <!----></dt>
+                                        <dd class="phone_item">
+                                            <div class="group_tf">
+                                                <button type="button" class="btn_number"> 휴대폰 번호 입력 </button>
                                             </div>
-                                        </div>
-                                        <button type="button" class="link_round btn_release"> 비공개 </button>
-                                    </div>
-                                </user-big-five>
-                                <user-hello>
-                                    <div class="group_shadow group_bnrhello">
-                                        <h3 class="tit_brn">안녕하세요?</h3>
-                                        <p class="txt_brn">나의 마음날씨는 어떤지 확인해보세요.</p>
-                                        <span class="thumb_img">
-                                            <img src="//t1.kakaocdn.net/together_image/my_brnhello.png" alt="" class="img_thumb">
-                                        </span>
-                                        <a data-tiara-layer="hello start" data-tiara-action-name="시작하기_클릭" class="link_round" href="/hello">시작하기</a>
-                                    </div>
-                                </user-hello>
-                                <user-badge-list>
-                                    <div class="group_shadow group_badge group_badge_type02">
-                                        <h3 class="tit_section section_type2"> 스탬프<span class="color_g1">1</span></h3>
-                                        <ul class="list_badge">
-                                            <li class="my_badage">
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="같이가치 새내기" src="https://mud-kage.kakaocdn.net/dn/cdS2zq/btqcKJyBiPS/SDkrVVYcKkxHXkcD8l68i0/img.png">
-                                                    <span class="screen_out">같이가치 새내기</span>
-                                                    <strong class="name_badge">같이가치 새내기</strong>
-                                                    <span class="screen_out">1회</span>
-                                                    <span class="num_badge">1회</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="진짜 나를 발견왕" src="https://mud-kage.kakaocdn.net/dn/bCLr4s/btqza7sfp3R/WxdDJXdeicgPOs1M1EAO00/img.png">
-                                                    <span class="screen_out">진짜 나를 발견왕</span>
-                                                    <strong class="name_badge">진짜 나를 발견왕</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="대한민국 사랑꾼" src="https://mud-kage.kakaocdn.net/dn/oLbSF/btqsZjySQCw/C6KjWeC9eeFHLIrZxwuA5K/img.png">
-                                                    <span class="screen_out">대한민국 사랑꾼</span>
-                                                    <strong class="name_badge">대한민국 사랑꾼</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="착한 힘꾼" src="https://mud-kage.kakaocdn.net/dn/qv8Is/btqqY4YwzWO/taAKALNEjmDXI8VZPSCqeK/img.png">
-                                                    <span class="screen_out">착한 힘꾼</span>
-                                                    <strong class="name_badge">착한 힘꾼</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="착한 요리왕" src="https://mud-kage.kakaocdn.net/dn/cFII9u/btqpqAqPfW8/9kCftmsQhJnffRzbslM4d1/img.png">
-                                                    <span class="screen_out">착한 요리왕</span>
-                                                    <strong class="name_badge">착한 요리왕</strong>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="list_more">
-                                            <button type="button" class="link_round">
-                                                <span class="screen_out">리스트</span>더보기
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <modal>
-                                        <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
-                                            <modal-content></modal-content>
-                                        </div>
-                                    </modal>
-                                </user-badge-list>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 20%; margin-left: -155px;"></div>
-                                </modal>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
-                                        <modal-content>
-                                            <div>
-                                                <div class="inner_together_layer inner_together_layer8₩">
-                                                    <div class="layer_head">
-                                                        <strong class="screen_out">카카오같이가치 채널, 알림 추가</strong>
-                                                    </div>
-                                                    <div class="layer_body">
-                                                        <div class="tayo_inform">
-                                                            <strong class="tit_inform">어떤버스 예약하기</strong>
-                                                            <p class="txt_inform"> 어떤버스 신청기간이 종료되었어요.<br> 어떤버스 다음 시즌 오픈 시<br> 카카오톡으로 알림을 받고 싶다면<br> 지금 예약해주세요. </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="plus_friend">
-                                                        <span class="choice_comm choice_checkbox">
-                                                            <input type="checkbox" id="checkPolicy" name="plusfriend_agreement" class="inp_comm ng-untouched ng-pristine ng-valid" value="true">
-                                                            <label for="checkPolicy" class="lab_comm">
-                                                                <span class="ico_together ico_checkbox"></span> 카카오같이가치 채널, 알림 추가 <em class="emph_give">(선택)</em>
-                                                            </label>
+                                        </dd>
+                                        <dt> 이메일 <!----></dt>
+                                        <dd class="phone_item">
+                                            <div class="group_tf">
+                                                <button type="button" class="btn_number"> 이메일 입력 </button>
+                                            </div>
+                                        </dd>
+                                        <dt> 나이 <!----></dt>
+                                        <dd>
+                                            <div class="pack_select">
+                                                <div class="box_select">
+                                                    <div class="opt_comm">
+                                                        <label for="opAge" class="screen_out">나이 선택</label>
+                                                        <span class="select_option select_on">선택안함</span>
+                                                        <select id="opAge" selectaccessibility="" class="opt_select ng-untouched ng-pristine ng-valid">
+                                                            <option value="" class="select_option"> 선택안함 </option>
+                                                            <option value="15">2009년생</option><option value="16">2008년생</option><option value="17">2007년생</option><option value="18">2006년생</option><option value="19">2005년생</option><option value="20">2004년생</option><option value="21">2003년생</option><option value="22">2002년생</option><option value="23">2001년생</option><option value="24">2000년생</option><option value="25">1999년생</option><option value="26">1998년생</option><option value="27">1997년생</option><option value="28">1996년생</option><option value="29">1995년생</option><option value="30">1994년생</option><option value="31">1993년생</option><option value="32">1992년생</option><option value="33">1991년생</option><option value="34">1990년생</option><option value="35">1989년생</option><option value="36">1988년생</option><option value="37">1987년생</option><option value="38">1986년생</option><option value="39">1985년생</option><option value="40">1984년생</option><option value="41">1983년생</option><option value="42">1982년생</option><option value="43">1981년생</option><option value="44">1980년생</option><option value="45">1979년생</option><option value="46">1978년생</option><option value="47">1977년생</option><option value="48">1976년생</option><option value="49">1975년생</option><option value="50">1974년생</option><option value="51">1973년생</option><option value="52">1972년생</option><option value="53">1971년생</option><option value="54">1970년생</option><option value="55">1969년생</option><option value="56">1968년생</option><option value="57">1967년생</option><option value="58">1966년생</option><option value="59">1965년생</option><option value="60">1964년생</option><option value="61">1963년생</option><option value="62">1962년생</option><option value="63">1961년생</option><option value="64">1960년생</option><option value="65">1959년생</option><option value="66">1958년생</option><option value="67">1957년생</option><option value="68">1956년생</option><option value="69">1955년생</option><option value="70">70대</option>
+                                                        </select>
+                                                        <span class="box_arrow">
+                                                            <span class="ico_together ico_arrow"></span>
                                                         </span>
-                                                        <button class="btn_view">내용 보기</button>
-                                                        <p class="txt_plus"> 카카오같이가치 채널을 추가하고, 이벤트 및 혜택에 대한 알림을 받습니다. </p>
-                                                    </div><div class="wrap_btn wrap_btn_type">
-                                                    <button type="button" data-tiara-layer="plusfriend sbus" data-tiara-action-name="다음시즌예약_클릭" class="btn_set btn_type1"> 다음시즌 예약합니다 </button>
-                                                </div>
-                                                    <div class="layer_foot">
-                                                        <button type="button" class="btn_close">
-                                                            <span class="ico_together">닫기</span>
-                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </modal-content>
-                                    </div>
-                                </modal>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 12%; margin-left: -155px;"></div>
-                                </modal>
-                            </user-profile>
+                                        </dd>
+                                        <dt> 성별 </dt>
+                                        <dd>
+                                            <div class="group_tf group_gender">
+                                                <span class="choice_comm choice_btn">
+                                                    <input type="radio" id="genderChk1" name="genderChk" class="inp_comm ng-untouched ng-pristine ng-valid">
+                                                    <label for="genderChk1" class="lab_comm">남자</label>
+                                                </span>
+                                                <span class="choice_comm choice_btn">
+                                                    <input type="radio" id="genderChk2" name="genderChk" class="inp_comm ng-untouched ng-pristine ng-valid">
+                                                    <label for="genderChk2" class="lab_comm">여자</label>
+                                                </span>
+                                                <span class="choice_comm choice_btn">
+                                                    <input type="radio" id="genderChk3" name="genderChk" class="inp_comm ng-untouched ng-pristine ng-valid">
+                                                    <label for="genderChk3" class="lab_comm">선택안함</label>
+                                                </span>
+                                            </div>
+                                        </dd>
+                                        <dt> 지역 </dt>
+                                        <dd>
+                                            <div class="pack_select select_type2">
+                                                <div class="box_select">
+                                                    <div class="opt_comm">
+                                                        <label for="selectTarget" class="screen_out">시,도 지역선택</label>
+                                                        <span class="select_option select_on">시,도 선택</span>
+                                                        <select name="parentRegion" id="selectTarget" selectaccessibility="" class="opt_select ng-untouched ng-pristine ng-valid">
+                                                            <option value="">시, 도 선택</option><option value="11"> 서울 </option><option value="26"> 부산 </option><option value="27"> 대구 </option><option value="28"> 인천 </option><option value="29"> 광주 </option><option value="30"> 대전 </option><option value="31"> 울산 </option><option value="36"> 세종 </option><option value="41"> 경기 </option><option value="42"> 강원 </option><option value="43"> 충북 </option><option value="44"> 충남 </option><option value="45"> 전북 </option><option value="46"> 전남 </option><option value="47"> 경북 </option><option value="48"> 경남 </option><option value="50"> 제주 </option><option value="99"> 해외 </option>
+                                                        </select>
+                                                        <span class="box_arrow">
+                                                            <span class="ico_together ico_arrow"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="box_select">
+                                                    <div class="opt_comm">
+                                                        <label for="selectRegion" class="screen_out">시,군,구 지역선택</label>
+                                                        <span class="select_option"></span>
+                                                        <span class="select_option select_on">시,군,구 지역선택</span>
+                                                        <select name="region" id="selectRegion" selectaccessibility="" class="opt_select ng-untouched ng-pristine ng-valid">
+                                                            <option value="">시,군,구 지역선택</option><option value="41110"> 수원시 </option><option value="41111"> 수원시 장안구 </option><option value="41113"> 수원시 권선구 </option><option value="41115"> 수원시 팔달구 </option><option value="41117"> 수원시 영통구 </option><option value="41130"> 성남시 </option><option value="41131"> 성남시 수정구 </option><option value="41133"> 성남시 중원구 </option><option value="41135"> 성남시 분당구 </option><option value="41150"> 의정부시 </option><option value="41170"> 안양시 </option><option value="41171"> 안양시 만안구 </option><option value="41173"> 안양시 동안구 </option><option value="41190"> 부천시 </option><option value="41210"> 광명시 </option><option value="41220"> 평택시 </option><option value="41250"> 동두천시 </option><option value="41270"> 안산시 </option><option value="41271"> 안산시 상록구 </option><option value="41273"> 안산시 단원구 </option><option value="41280"> 고양시 </option><option value="41281"> 고양시 덕양구 </option><option value="41285"> 고양시 일산동구 </option><option value="41287"> 고양시 일산서구 </option><option value="41290"> 과천시 </option><option value="41310"> 구리시 </option><option value="41360"> 남양주시 </option><option value="41370"> 오산시 </option><option value="41390"> 시흥시 </option><option value="41410"> 군포시 </option><option value="41430"> 의왕시 </option><option value="41450"> 하남시 </option><option value="41460"> 용인시 </option><option value="41461"> 용인시 처인구 </option><option value="41463"> 용인시 기흥구 </option><option value="41465"> 용인시 수지구 </option><option value="41480"> 파주시 </option><option value="41500"> 이천시 </option><option value="41550"> 안성시 </option><option value="41570"> 김포시 </option><option value="41590"> 화성시 </option><option value="41610"> 광주시 </option><option value="41630"> 양주시 </option><option value="41650"> 포천시 </option><option value="41670"> 여주시 </option><option value="41800"> 연천군 </option><option value="41820"> 가평군 </option><option value="41830"> 양평군 </option>
+                                                        </select>
+                                                        <span class="box_arrow">
+                                                            <span class="ico_together ico_arrow"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                        <update-phone-modal>
+                                            <modal>
+                                                <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
+                                                    <modal-content>
+                                                        <div class="inner_together_layer inner_together_layer2">
+                                                            <div class="layer_head">
+                                                                <strong class="screen_out">휴대폰 번호 변경</strong>
+                                                            </div>
+                                                            <div class="layer_body">
+                                                                <form novalidate="" class="form_phone ng-untouched ng-pristine ng-valid">
+                                                                    <fieldset>
+                                                                        <legend class="screen_out">휴대폰번호 변경 양식</legend>
+                                                                        <div class="wrap_phone write_phone">
+                                                                            <dl class="list_write">
+                                                                                <dt> 같이가치와 연락가능한 휴대폰 번호를 입력해주세요.<br>입력하신 휴대폰 번호로 발송된 인증번호를 입력 후 확인 버튼 클릭 시 휴대폰 번호가 즉시 변경됩니다. </dt>
+                                                                                <dd>
+                                                                                    <div class="info_phone">
+                                                                                        <div class="group_tf">
+                                                                                            <label for="phoneNum1" class="screen_out">전화번호 앞자리</label>
+                                                                                            <input type="text" id="phoneNum1" maxlength="3" name="first" numberonly="" class="tf_write ng-untouched ng-pristine ng-valid">
+                                                                                        </div>
+                                                                                        <span class="dash_among">
+                                                                                            <span class="inner_among"></span>
+                                                                                        </span>
+                                                                                        <div class="group_tf">
+                                                                                            <label for="phoneNum2" class="screen_out">전화번호 중간자리</label>
+                                                                                            <input type="text" id="phoneNum2" maxlength="4" name="middle" numberonly="" class="tf_write ng-untouched ng-pristine ng-valid">
+                                                                                        </div>
+                                                                                        <span class="dash_among">
+                                                                                            <span class="inner_among"></span>
+                                                                                        </span>
+                                                                                        <div class="group_tf">
+                                                                                            <label for="phoneNum3" class="screen_out">전화번호 끝자리</label>
+                                                                                            <input type="text" id="phoneNum3" maxlength="4" name="last" numberonly="" class="tf_write ng-untouched ng-pristine ng-valid">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <button type="button" freezebutton="" class="btn_certify"> 인증번호  받기 </button>
+                                                                                    <div class="group_tf">
+                                                                                        <label for="certifyNum" class="txt_lab">인증번호 4자리 입력</label>
+                                                                                        <input numberonly="" type="text" min="0" id="certifyNum" name="otpCode" class="tf_write ng-untouched ng-pristine" maxlength="100" disabled="">
+                                                                                    </div>
+                                                                                </dd>
+                                                                            </dl>
+                                                                        </div>
+                                                                        <div class="wrap_btn wrap_btn_type">
+                                                                            <button type="button" class="btn_set btn_type1"> 확인 </button>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </form>
+                                                            </div>
+                                                            <div class="layer_foot">
+                                                                <button type="button" class="btn_close">
+                                                                    <span class="ico_together">닫기</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </modal-content>
+                                                </div>
+                                            </modal>
+                                        </update-phone-modal>
+                                        <update-email-modal>
+                                            <modal>
+                                                <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
+                                                    <modal-content>
+                                                        <div class="inner_together_layer inner_together_layer2">
+                                                            <div class="layer_head">
+                                                                <strong class="screen_out">이메일 등록하기</strong>
+                                                            </div>
+                                                            <div class="layer_body">
+                                                                <form novalidate="" class="form_phone ng-untouched ng-pristine ng-valid">
+                                                                    <fieldset>
+                                                                        <legend class="screen_out">이메 변경 양식</legend>
+                                                                        <div class="wrap_phone write_phone">
+                                                                            <dl class="list_write">
+                                                                                <dt> 같이가치와 연락가능한 이메일 입력해주세요.<br>입력하신 이메일 주소로 발송된 인증번호를 입력 후<br>확인 버튼 클릭 시 이메일 주소가 즉시 변경됩니다. </dt>
+                                                                                <dd>
+                                                                                    <div class="info_phone" style="width: 100%;">
+                                                                                        <div class="group_tf" style="width: 100%;">
+                                                                                            <label for="certifyEmail1" class="txt_lab">이메일 주소를 입력하세요</label>
+                                                                                            <input type="text" id="certifyEmail1" name="personal_email" class="tf_write ng-untouched ng-pristine ng-valid" maxlength="200">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <button type="button" freezebutton="" class="btn_certify"> 인증번호  받기 </button>
+                                                                                    <div class="group_tf">
+                                                                                        <label for="certifyEmail2" class="txt_lab">인증번호를 입력하세요</label>
+                                                                                        <input type="text" id="certifyEmail2" name="otpCode" class="tf_write ng-untouched ng-pristine ng-valid" maxlength="100">
+                                                                                    </div>
+                                                                                </dd>
+                                                                            </dl>
+                                                                        </div>
+                                                                        <div class="wrap_btn wrap_btn_type">
+                                                                            <button type="submit" class="btn_set btn_type1"> 확인 </button>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </form>
+                                                            </div>
+                                                            <div class="layer_foot">
+                                                                <button type="button" class="btn_close">
+                                                                    <span class="ico_together">닫기</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </modal-content>
+                                                </div>
+                                            </modal>
+                                        </update-email-modal>
+                                    </profile-edit>
+                                </dl>
+                            </div>
+                            <div class="bg_dashline"></div>
+                            <div class="btn_step_type">
+                                <button type="button" data-tiara-layer="save" data-tiara-action-name="프로필_저장하기_클릭" class="link_step link_type3"> 저장하기 </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </user-header>
+                <profile-agreement></profile-agreement>
+            </ng-component>
         </span>
         <!--메인 끝-->
         <hr class="hide">

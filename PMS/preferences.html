@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>놀이터</title>
-    <link rel="stylesheet" href="CSS/myPage.css">
+    <link rel="stylesheet" href="CSS/preferences.css">
     <style>
         @font-face {
             font-family: 'SegoeUI_online_security';
@@ -174,280 +174,123 @@
         <!--메인 시작-->
         <span id="rootContent">
             <router-outlet></router-outlet>
-            <user-header>
-                <div id="dkContent" class="cont_mypage">
+            <ng-component>
+                <div id="dkContent" class="cont_declare">
                     <div id="mArticle">
-                        <div class="mypage_cont">
-                            <h2 class="screen_out">마이페이지</h2>
-                            <div data-tiara-layer="user" class="group_profile">
-                                <h3 class="screen_out">내 프로필 정보</h3>
-                                <div class="area_name">
-                                    <div class="link_myprofile">
-                                        <strong class="txt_nick">학생/교사</strong>
-                                        <div class="box_name">
-                                            <strong class="txt_name"> 닉네임 </strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="area_thumb">
-                                    <a routerlink="badges" data-tiara-layer="talk_badge" data-tiara-action-name="스탬프_클릭" class="link_badge" href="/my/badges">
-                                        <span class="badge_thumb">
-                                            <img class="img_thumb" src="https://mud-kage.kakaocdn.net/dn/cdS2zq/btqcKJyBiPS/SDkrVVYcKkxHXkcD8l68i0/img.png" alt="카카오같이가치에 오신 것을 환영합니다! 세상의 변화를 만드는 활동에 함께해요.">
-                                        </span>
-                                    </a>
-                                    <a data-tiara-layer="profile_img" data-tiara-action-name="프로필수정_클릭" class="link_thumb" href="/preferences/profile">
-                                        <span class="profile_thumb">
-                                            <img profileimagecheck="" alt="프로필 사진" class="img_thumb" src="https://t1.kakaocdn.net/together_image/common/avatar/avatar04.png">
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="area_setting">
-                                    <a data-tiara-layer="setting" data-tiara-action-name="설정_클릭" routerlink="/preferences" class="link_setting" href="/preferences">
-                                        <span class="screen_out">프로필</span> 설정
-                                    </a>
-                                </div>
+                        <h2 id="dkBody" class="screen_out">서비스 설정</h2>
+                        <div class="wrap_svcset">
+                            <div class="svc_set">
+                                <strong class="tit_set">서비스 설정</strong>
+                                <ul class="list_set">
+                                    <li>
+                                        <a routerlink="/preferences/profile" data-tiara-layer="profile" data-tiara-action-name="프로필수정_클릭" class="btn_set link_set" style="cursor: pointer;" href="/preferences/profile">
+                                            <strong class="txt_set">프로필 수정</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a underageclick="/teams/create" data-tiara-layer="team_manager" data-tiara-action-name="프로젝트팀_추가_클릭" class="btn_set link_set" style="cursor: pointer;">
+                                            <strong class="txt_set">프로젝트팀 추가</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-tiara-layer="talk_badge" data-tiara-action-name="스탬프_보기_클릭" class="btn_set link_set" href="/my/badges">
+                                            <strong class="txt_set">내 기부 스탬프 보기</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-tiara-layer="service_agreement" data-tiara-action-name="이용동의_보기_클릭" class="btn_set link_set" href="/preferences/service-agreement">
+                                            <strong class="txt_set">서비스 이용 동의</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-tiara-layer="third_party_agreement" data-tiara-action-name="3자제공동의_보기_클릭" class="btn_set link_set" href="/preferences/third-party-agreement">
+                                            <strong class="txt_set">개인정보 제 3자 제공 동의</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="link_set">
+                                            <strong class="txt_set">카카오같이가치 탈퇴</strong>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <router-outlet></router-outlet>
-                            <user-profile>
-                                <div class="group_shadow group_donatedetail">
-                                    <h3 class="tit_section section_type2">기부내역</h3>
-                                    <button type="button" class="link_round btn_release"> 비공개 </button>
-                                    <div class="area_donatedetail">
-                                        <div class="total_donate">
-                                            <strong class="tit_total">총 기부금</strong>
-                                            <span class="num_total">0원</span>
-                                        </div>
-                                        <div class="detail_donate">
-                                            <ul class="list_detail">
-                                                <li>
-                                                    <span class="tit_detail">기부횟수</span>
-                                                    <span class="num_detail">0회</span>
-                                                </li>
-                                                <li>
-                                                    <span class="tit_detail">직접기부</span>
-                                                    <span class="num_detail">0원</span>
-                                                </li><li><span class="tit_detail">참여기부</span>
-                                                <span class="num_detail">0원</span>
-                                            </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div data-tiara-layer="donation" class="area_moreinfo">
-                                        <ul class="list_moreinfo">
-                                            <li>
-                                                <a routerlink="donations" data-tiara-layer="list" data-tiara-action-name="기부내역_클릭" class="link_more" href="/my/donations"> 기부내역 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="receipts" data-tiara-layer="receipts" data-tiara-action-name="기부금영수증_클릭" class="link_more" href="/my/receipts"> 기부금 영수증 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="certification" data-tiara-layer="certificate" data-tiara-action-name="활동증서_클릭" class="link_more" href="/my/certification"> 활동증서 </a>
-                                            </li>
-                                            <li>
-                                                <a routerlink="coupons" data-tiara-layer="coupon" data-tiara-action-name="가부쿠폰_클릭" class="link_more" href="/my/coupons"> 기부쿠폰 </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <user-fundraising-list></user-fundraising-list>
-                                <user-volunteer-list></user-volunteer-list>
-                                <user-profile-applicants></user-profile-applicants>
-                                <user-profile-actions data-tiara-layer="my">
-                                    <a href="" class="group_shadow group_action_before">
-                                        <strong class="tit_action">더 나은 세상을 위해<br>함께 할 수 있는 일이 있어요!</strong>
-                                        <p class="desc_action">지금 모두의행동이 진행중입니다</p>
-                                        <span class="box_thumbnail">
-                                            <img src="//t1.kakaocdn.net/together_image/my_action.png" alt="" class="img_thumb">
-                                        </span>
-                                        <span class="link_round">행동하기</span>
-                                    </a>
-                                </user-profile-actions>
-                                <user-big-five>
-                                    <div class="group_shadow group_mypersonality">
-                                        <div class="part_analysis">
-                                            <h3 class="tit_section section_type6">나의 성격 (Big 5)</h3>
-                                            <span class="screen_out">종합분석 타이틀 리스트</span>
-                                            <div class="area_analysis">
-                                                <ul class="list_analysis">
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/1">
-                                                            <strong class="tit_analysis"> 개방성 <span class="sub_analysis">Openness to Experience</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color1">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/2">
-                                                            <strong class="tit_analysis"> 성실성 <span class="sub_analysis">Conscientiousness</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color2">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/3">
-                                                            <strong class="tit_analysis"> 외향성 <span class="sub_analysis">Extraversion</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color3">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/4">
-                                                            <strong class="tit_analysis"> 우호성 <span class="sub_analysis">Agreeableness</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color4">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="link_analysis" href="/big-five/5">
-                                                            <strong class="tit_analysis"> 신경증 <span class="sub_analysis">Neuroticism</span></strong>
-                                                            <div class="graph_analysis graph_uncertainty">
-                                                                <span class="bar_graph graph_color5">
-                                                                    <span class="num_graph">-</span>
-                                                                    <span class="ico_together2"></span>
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <span class="indicate_boundary boundary_low" style="left: 30%;"><span class="line_info"></span> 낮음 </span>
-                                                <span class="indicate_boundary boundary_high" style="left: 70%;"><span class="line_info"></span> 높음 </span>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="link_round btn_release"> 비공개 </button>
-                                    </div>
-                                </user-big-five>
-                                <user-hello>
-                                    <div class="group_shadow group_bnrhello">
-                                        <h3 class="tit_brn">안녕하세요?</h3>
-                                        <p class="txt_brn">나의 마음날씨는 어떤지 확인해보세요.</p>
-                                        <span class="thumb_img">
-                                            <img src="//t1.kakaocdn.net/together_image/my_brnhello.png" alt="" class="img_thumb">
-                                        </span>
-                                        <a data-tiara-layer="hello start" data-tiara-action-name="시작하기_클릭" class="link_round" href="/hello">시작하기</a>
-                                    </div>
-                                </user-hello>
-                                <user-badge-list>
-                                    <div class="group_shadow group_badge group_badge_type02">
-                                        <h3 class="tit_section section_type2"> 스탬프<span class="color_g1">1</span></h3>
-                                        <ul class="list_badge">
-                                            <li class="my_badage">
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="같이가치 새내기" src="https://mud-kage.kakaocdn.net/dn/cdS2zq/btqcKJyBiPS/SDkrVVYcKkxHXkcD8l68i0/img.png">
-                                                    <span class="screen_out">같이가치 새내기</span>
-                                                    <strong class="name_badge">같이가치 새내기</strong>
-                                                    <span class="screen_out">1회</span>
-                                                    <span class="num_badge">1회</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="진짜 나를 발견왕" src="https://mud-kage.kakaocdn.net/dn/bCLr4s/btqza7sfp3R/WxdDJXdeicgPOs1M1EAO00/img.png">
-                                                    <span class="screen_out">진짜 나를 발견왕</span>
-                                                    <strong class="name_badge">진짜 나를 발견왕</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="대한민국 사랑꾼" src="https://mud-kage.kakaocdn.net/dn/oLbSF/btqsZjySQCw/C6KjWeC9eeFHLIrZxwuA5K/img.png">
-                                                    <span class="screen_out">대한민국 사랑꾼</span>
-                                                    <strong class="name_badge">대한민국 사랑꾼</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="착한 힘꾼" src="https://mud-kage.kakaocdn.net/dn/qv8Is/btqqY4YwzWO/taAKALNEjmDXI8VZPSCqeK/img.png">
-                                                    <span class="screen_out">착한 힘꾼</span>
-                                                    <strong class="name_badge">착한 힘꾼</strong>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <strong class="screen_out">내가 획득한 스탬프</strong>
-                                                <a class="link_badge">
-                                                    <img class="thumb_badge" alt="착한 요리왕" src="https://mud-kage.kakaocdn.net/dn/cFII9u/btqpqAqPfW8/9kCftmsQhJnffRzbslM4d1/img.png">
-                                                    <span class="screen_out">착한 요리왕</span>
-                                                    <strong class="name_badge">착한 요리왕</strong>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="list_more">
-                                            <button type="button" class="link_round">
-                                                <span class="screen_out">리스트</span>더보기
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <modal>
-                                        <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
-                                            <modal-content></modal-content>
-                                        </div>
-                                    </modal>
-                                </user-badge-list>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 20%; margin-left: -155px;"></div>
-                                </modal>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
-                                        <modal-content>
-                                            <div>
-                                                <div class="inner_together_layer inner_together_layer8₩">
-                                                    <div class="layer_head">
-                                                        <strong class="screen_out">카카오같이가치 채널, 알림 추가</strong>
-                                                    </div>
-                                                    <div class="layer_body">
-                                                        <div class="tayo_inform">
-                                                            <strong class="tit_inform">어떤버스 예약하기</strong>
-                                                            <p class="txt_inform"> 어떤버스 신청기간이 종료되었어요.<br> 어떤버스 다음 시즌 오픈 시<br> 카카오톡으로 알림을 받고 싶다면<br> 지금 예약해주세요. </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="plus_friend">
-                                                        <span class="choice_comm choice_checkbox">
-                                                            <input type="checkbox" id="checkPolicy" name="plusfriend_agreement" class="inp_comm ng-untouched ng-pristine ng-valid" value="true">
-                                                            <label for="checkPolicy" class="lab_comm">
-                                                                <span class="ico_together ico_checkbox"></span> 카카오같이가치 채널, 알림 추가 <em class="emph_give">(선택)</em>
-                                                            </label>
-                                                        </span>
-                                                        <button class="btn_view">내용 보기</button>
-                                                        <p class="txt_plus"> 카카오같이가치 채널을 추가하고, 이벤트 및 혜택에 대한 알림을 받습니다. </p>
-                                                    </div><div class="wrap_btn wrap_btn_type">
-                                                    <button type="button" data-tiara-layer="plusfriend sbus" data-tiara-action-name="다음시즌예약_클릭" class="btn_set btn_type1"> 다음시즌 예약합니다 </button>
-                                                </div>
-                                                    <div class="layer_foot">
-                                                        <button type="button" class="btn_close">
-                                                            <span class="ico_together">닫기</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </modal-content>
-                                    </div>
-                                </modal>
-                                <modal>
-                                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 12%; margin-left: -155px;"></div>
-                                </modal>
-                            </user-profile>
+                            <div class="svc_set">
+                                <strong class="tit_set">함께해요, 같이가치</strong>
+                                <ul class="list_set">
+                                    <li>
+                                        <a href="http://plus.kakao.com/home/@%EC%B9%B4%EC%B9%B4%EC%98%A4%EA%B0%99%EC%9D%B4%EA%B0%80%EC%B9%98" targetblankpc="" data-tiara-layer="together_yellow" data-tiara-action-name="소식받기_클릭" class="btn_set link_set" target="_blank">
+                                            <span class="ico_social social_on ico_kakaotalk"></span>
+                                            <strong class="txt_set">카카오톡으로 소식 받기</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://story.kakao.com/ch/k_together" targetblankpc="" data-tiara-layer="together_kakaostory" data-tiara-action-name="카카오스토리_페이지_클릭" class="btn_set link_set" target="_blank">
+                                            <span class="ico_social social_on ico_kakaostory"></span>
+                                            <strong class="txt_set">카카오스토리 페이지 가기</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/kakao.together" targetblankpc="" data-tiara-layer="together_facebook" data-tiara-action-name="페이스북_페이지_클릭" class="btn_set link_set" target="_blank">
+                                            <span class="ico_social social_on ico_facebook"></span>
+                                            <strong class="txt_set">페이스북 페이지 가기</strong>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/together_kakao" targetblankpc="" data-tiara-layer="together_instagram" data-tiara-action-name="인스타그램_페이지_클릭" class="btn_set link_set" target="_blank">
+                                            <span class="ico_social social_on ico_instagram"></span>
+                                            <strong class="txt_set">인스타그램 페이지 가기</strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </user-header>
+                <modal>
+                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
+                        <modal-content>
+                            <div class="inner_together_layer inner_together_layer8">
+                                <div class="layer_body">
+                                    <p class="desc_together">
+                                        <span class="txt_desc">현재 진행 중인 모금함이 있어 탈퇴가 불가능합니다.<br>모금함을 삭제하시거나, 고객센터를 통해<br>모금함 담당자 변경 후 탈퇴해주세요.</span>
+                                    </p>
+                                    <a class="link_together" href="https://cs.kakao.com/requests?category=204&amp;locale=ko&amp;service=72">고객센터 문의하기</a>
+                                    <div class="wrap_btn wrap_btn_type">
+                                        <button class="btn_set btn_type1"> 확인 </button>
+                                    </div>
+                                </div>
+                                <div class="layer_foot">
+                                    <button type="button" class="btn_close">
+                                        <span class="ico_together">닫기</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </modal-content>
+                    </div>
+                </modal>
+                <modal>
+                    <div tabindex="-1" role="dialog" class="ngdialog-content" id="modalOFF" style="position: fixed; display: none; top: 25%; margin-left: -192px;">
+                        <modal-content>
+                            <div class="inner_together_layer inner_together_layer8">
+                                <div class="layer_body">
+                                    <p class="desc_together">
+                                        <span class="txt_desc">마스터로 등록된 프로젝트 팀이 있습니다.<br>마스터 권한을 위임하시거나,<br>프로젝트 팀 운영을 종료하셔야 탈퇴가 가능합니다.</span>
+                                    </p>
+                                    <a class="link_together" href="https://cs.kakao.com/requests?category=204&amp;locale=ko&amp;service=72">고객센터 문의하기</a>
+                                    <div class="wrap_btn wrap_btn_type">
+                                        <button class="btn_set btn_type1"> 확인 </button>
+                                    </div>
+                                </div>
+                                <div class="layer_foot">
+                                    <button type="button" class="btn_close">
+                                        <span class="ico_together">닫기</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </modal-content>
+                    </div>
+                </modal>
+            </ng-component>
         </span>
         <!--메인 끝-->
         <hr class="hide">

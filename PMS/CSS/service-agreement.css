@@ -578,34 +578,196 @@ dl, li, menu, ol, ul {
     text-indent: -9999px;
 }
 
-.ppi_info {
-    width: 700px;
-    margin: 55px auto 115px;
+.wrap_project {
+    background-color: #fff;
 }
 
-.ppi_info .tit_ppi {
-    padding-left: 2px;
-    font-weight: 400;
-    font-size: 24px;
-    color: #444;
+.wrap_project .box_cont {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.policy_regs {
+    padding: 0;
+}
+
+.wrap_project .box_cont .list_write {
+    position: relative;
+    margin: 10px 0 26px;
+    font-size: 16px;
+}
+
+.wrap_agree .box_cont .policy_regs {
+    padding: 35px 0 25px;
+}
+
+.box_cont .list_write dt {
+    position: absolute;
+    left: 0;
+    width: 170px;
+    margin-top: 36px;
     font-family: KakaoBig Bold,sans-serif;
 }
 
-.ppi_info .txt_ppi {
-    padding-top: 8px;
-    padding-left: 2px;
-    font-size: 15px;
-    line-height: 28px;
-    color: #666;
-    white-space: pre-line;
+.box_cont .policy_regs dt, .policy_regs dt {
+    margin-top: 36px;
 }
 
-.ppi_info .provide_none {
-    width: 425px;
-    padding-top: 14px;
+.wrap_agree .box_cont .policy_regs dt {
+    font-family: KakaoBig Bold,sans-serif;
 }
 
+.box_cont .list_write dd {
+    position: relative;
+    min-height: 44px;
+    padding: 26px 0 20px 170px;
+}
 
+.policy_regs .info_policy:first-of-type {
+    padding-top: 36px;
+}
+
+.choice_comm {
+    display: block;
+    position: relative;
+}
+
+.info_policy .btn_view, .info_policy .choice_comm {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.policy_regs .info_policy .choice_comm {
+    margin-top: 0;
+}
+
+.choice_comm .inp_comm {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    outline: none;
+    opacity: .01;
+    filter: alpha(opacity=1);
+}
+
+input:checked[type=checkbox] {
+    background-color: #666;
+    -webkit-appearance: checkbox;
+}
+
+.choice_comm .lab_comm {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 34px;
+    color: #959595;
+    vertical-align: top;
+}
+
+.choice_checkbox .lab_comm {
+    padding-left: 44px;
+    color: #444;
+}
+
+.list_write .choice_comm .lab_comm {
+    padding: 0 0 0 42px;
+}
+
+.ico_together {
+    background: url(//t1.kakaocdn.net/together_image/common/ico_together_201008.png) no-repeat 0 0;
+}
+
+.ico_together, .ico_together2 {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.choice_comm .ico_together {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+}
+
+.choice_checkbox .ico_checkbox {
+    background-position: -311px -71px;
+}
+
+.choice_checkbox .inp_comm:checked+.lab_comm .ico_checkbox, .choice_checkbox .lab_comm .ico_choiced {
+    background-position: -275px -71px;
+}
+
+.info_policy .area_policy {
+    display: none;
+    width: 100%;
+    clear: both;
+}
+
+.info_policy .open_policy {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.info_policy .box_policy {
+    margin-top: 16px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+}
+
+.info_policy .box_policy .tit_policy {
+    display: block;
+    padding: 10px 16px;
+    border-top: 1px solid #e0e0e0;
+    font-weight: 400;
+    font-size: 13px;
+    color: #444;
+    background-color: #fafafa;
+}
+
+.info_policy .box_policy .tit_policy:first-child {
+    border-top: 0;
+}
+
+.info_policy .box_policy .desc_policy {
+    padding: 11px 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 13px;
+    line-height: 22px;
+    color: #626262;
+}
+
+.info_policy .txt_policy {
+    display: block;
+    padding-top: 7px;
+    font-size: 13px;
+    line-height: 22px;
+    color: #959595;
+}
+
+.info_policy .link_policy {
+    display: inline-block;
+    border-bottom: 1px solid #dc287c;
+    line-height: 14px;
+    color: #dc287c;
+    vertical-align: initial;
+}
+
+.wrap_project .box_cont:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    content: "";
+}
 
 /* 메인 컨텐츠 끝*/
 .hide{

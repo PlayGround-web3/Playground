@@ -555,8 +555,108 @@ dl, li, menu, ol, ul {
 /* 사이드 메뉴 끝*/
 
 /* 메인 컨텐츠 시작 */
+#dkContent, #rootContent {
+    flex-grow: 1;
+    min-height: calc(100vh - (70px + 250px));
+}
 
+#dkContent {
+    position: relative;
+    margin: 0 0 -212px;
+}
 
+#mArticle {
+    padding: 0 0 250px;
+}
+
+.screen_out {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.wrap_svcset {
+    overflow: hidden;
+    width: 740px;
+    margin: 40px auto 140px;
+}
+
+.wrap_svcset .svc_set {
+    float: left;
+    width: 330px;
+    margin: 0 20px;
+}
+
+.wrap_svcset .tit_set {
+    display: block;
+    padding: 19px 0 21px;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 400;
+    font-size: 20px;
+    color: #00adb7;
+}
+
+.wrap_svcset .list_set li {
+    height: 69px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.wrap_svcset .list_set .link_set {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    font-size: 16px;
+    line-height: 69px;
+    color: #444;
+}
+
+.wrap_svcset .list_set .txt_set {
+    font-weight: 400;
+}
+
+.wrap_svcset .svc_set+.svc_set .tit_set {
+    color: #dc287c;
+}
+
+.ico_social {
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin: 2px;
+    border-radius: 60px;
+    font-size: 0;
+    line-height: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999px;
+}
+
+.social_on {
+    background-position: 0 0;
+}
+
+.ico_social.ico_kakaotalk {
+    background-image: url(//t1.kakaocdn.net/together_image/svg/ico_kakaotalk.svg);
+}
+
+.ico_social.ico_kakaostory {
+    background-image: url(//t1.kakaocdn.net/together_image/svg/ico_kakaostory.svg);
+}
+
+.ico_social.ico_facebook {
+    background-image: url(//t1.kakaocdn.net/together_image/svg/ico_facebook.svg);
+}
+
+.ico_social.ico_instagram {
+    background-image: url(//t1.kakaocdn.net/together_image/svg/ico_instagram.svg);
+}
+
+.wrap_svcset .list_set .link_set .ico_social {
+    margin: 13px 12px 0 0;
+}
 
 /* 메인 컨텐츠 끝*/
 .hide{

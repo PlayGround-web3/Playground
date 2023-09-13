@@ -555,7 +555,6 @@ dl, li, menu, ol, ul {
 /* 사이드 메뉴 끝*/
 
 /* 메인 컨텐츠 시작 */
-
 #dkContent, #rootContent {
     flex-grow: 1;
     min-height: calc(100vh - (70px + 250px));
@@ -570,117 +569,101 @@ dl, li, menu, ol, ul {
     padding: 0 0 250px;
 }
 
-.cont_mypage #mArticle {
-    padding-bottom: 212px;
-}
-
-.mypage_cont {
+.wrap_withdraw {
     width: 700px;
-    margin: 0 auto;
-    padding-bottom: 170px;
+    margin: 80px auto 60px;
 }
 
-.screen_out {
-    overflow: hidden;
-    position: absolute;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    text-indent: -9999px;
-}
-
-.group_profile {
-    position: relative;
-    min-height: 190px;
-    padding-top: 34px;
-    padding-bottom: 10px;
-    box-sizing: border-box;
-    background: url(//t1.kakaocdn.net/together_image/bg_mypage.png) 98% 18px no-repeat;
-    background-size: 215px 160px;
-}
-
-.group_profile .area_name {
-    display: inline-block;
-    max-width: 550px;
-    vertical-align: top;
-}
-
-.group_profile .area_name .txt_nick {
-    max-width: 465px;
-    text-overflow: ellipsis;
-    word-wrap: normal;
-    font-size: 18px;
-}
-
-.group_profile .area_name .txt_name, .group_profile .area_name .txt_nick {
+.wrap_withdraw .tit_withdraw {
     display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    font-weight: 400;
+    color: #202020;
+    font-family: KakaoBig Bold,sans-serif;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: -.1px;
+}
+
+.wrap_withdraw .txt_withdraw {
+    padding-top: 8px;
+    color: #202020;
+    font-size: 15px;
+    line-height: 2;
+    text-align: center;
+    letter-spacing: -.1px;
+}
+
+.wrap_withdraw .bg_withdraw {
+    width: 100%;
+    height: 112px;
+    margin-top: 30px;
+    background: url(//t1.kakaocdn.net/together_image/bg_withdraw.png) no-repeat 50%/cover;
+}
+
+.wrap_withdraw .area_info {
+    margin-top: 80px;
+    padding: 28px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+}
+
+.wrap_withdraw .tit_info {
+    display: block;
+    color: #202020;
+    font-family: KakaoBig Bold,sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.wrap_withdraw .desc_info {
+    color: #202020;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.wrap_withdraw .list_info li+li, .wrap_withdraw .tit_info~.tit_info {
+    padding-top: 30px;
+}
+
+.wrap_withdraw .item_info {
+    display: block;
     font-family: KakaoBig Bold,sans-serif;
 }
 
-.group_profile .area_name .box_name {
-    display: inline-block;
-    position: relative;
-    max-width: 465px;
+.wrap_withdraw .list_info li+li, .wrap_withdraw .tit_info~.tit_info {
+    padding-top: 30px;
 }
 
-.group_profile .area_name .txt_name {
-    text-overflow: ellipsis;
-    font-size: 36px;
-    line-height: 1.4;
+.wrap_withdraw .box_gif {
+    width: 80px;
+    height: 80px;
+    margin: 40px auto 0;
+    background: url(//t1.kakaocdn.net/together_image/common/choonsik_sad.png) no-repeat 50% 50%/cover;
 }
 
-.group_profile .area_thumb {
-    position: absolute;
-    top: 40px;
-    right: 40px;
+.wrap_withdraw .txt_bye {
+    padding-top: 26px;
+    font-family: KakaoBig Bold,sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 
-.group_profile .area_thumb .link_badge {
-    position: absolute;
-    left: -15px;
-    width: 40px;
-    height: 40px;
+.wrap_withdraw .wrap_btn {
+    width: 335px;
+    margin: 20px auto 0;
 }
 
-.img_thumb {
-    display: block;
-}
-
-.group_profile .area_thumb .badge_thumb .img_thumb {
+.wrap_withdraw .btn_withdraw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 47px;
+    border-radius: 6px;
+    background-color: #ff4050;
+    color: #fff;
+    font-family: KakaoBig Bold,sans-serif;
+    font-size: 16px;
 }
-
-.group_profile .area_thumb .profile_thumb .img_thumb {
-    width: 100%;
-    height: 100%;
-}
-
-.group_profile .area_thumb .link_thumb {
-    display: block;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.group_profile .area_setting {
-    height: 40px;
-    padding-top: 14px;
-    padding-left: 3px;
-}
-
-.group_profile .area_setting .link_setting {
-    font-size: 14px;
-    border-bottom: 1px solid #444;
-    background-color: initial;
-}
-/* 상단 프로필까지 */
-
-
 
 /* 메인 컨텐츠 끝*/
 .hide{
@@ -805,7 +788,7 @@ dl, li, menu, ol, ul {
     letter-spacing: -.1px;
 }
 
-.area_info {
+.d_footer .area_info {
     flex-direction: row;
     justify-content: space-between;
     grid-gap: 16px;

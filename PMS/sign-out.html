@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>놀이터</title>
-    <link rel="stylesheet" href="CSS/myPage.css">
+    <link rel="stylesheet" href="CSS/sign-out.css">
     <style>
         @font-face {
             font-family: 'SegoeUI_online_security';
@@ -77,7 +77,7 @@
                     <div class="slide_menu_button">
                         <button _ngcontent-qal-c22="" type="button" data-tiara-layer="m_menu" data-tiara-action-name="메뉴펼치기_클릭" class="btn_side">
                             <span _ngcontent-qal-c22="" class="screen_out">내 알림</span>
-                            <span _ngcontent-qal-c22="" class="ico_together ico_menu">같이가치 메뉴 펼치기</span>
+                            <span _ngcontent-qal-c22="" class="ico_together ico_menu">놀이터 메뉴 펼치기</span>
                         </button>
                     </div>
                     <!--사이드 메뉴나오는 버튼-->
@@ -87,7 +87,7 @@
                 <div id="sideouter_layer" class="sideouter_layer" style="height: 963px; z-index: 1000;" hidden=""></div>
                 <div id="mFeature" data-tiara-layer="sidemenu" class="sidemenu" style="height: 988px;">
                     <div class="inner_side">
-                        <h2 class="tit_sidemenu">같이가치 사이드메뉴</h2>
+                        <h2 class="tit_sidemenu">놀이터 사이드메뉴</h2>
                         <div id="side_content" class="side_content" style="height: 917px;">
                             <div data-tiara-layer="profile" class="wrap_my">
                                 <button type="button" routerlink="/my" data-tiara-layer="profile" data-tiara-action-name="사이드 메뉴 프로필_클릭" class="side_btn_profile" tabindex="0">
@@ -111,7 +111,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <h3 class="side_screen_out">같이가치 모바일사이드메뉴</h3>
+                            <h3 class="side_screen_out">놀이터 모바일사이드메뉴</h3>
                             <ul class="list_sidemenu">
                                 <li>
                                     <a href="/fundraisings/now" reloadonduplicatedclick="" data-tiara-layer="donations" data-tiara-action-name="사이드 메뉴 같이기부_클릭" class="link_sidemenu">
@@ -140,7 +140,7 @@
                             </ul>
                             <ul class="list_sidesub">
                                 <li>
-                                    <a routerlink="/auroville/together" reloadonduplicatedclick="" data-tiara-layer="together" data-tiara-action-name="사이드 메뉴 같이가치 소개_클릭" class="link_sidesub" href="/auroville/together">같이가치 소개</a>
+                                    <a routerlink="/auroville/together" reloadonduplicatedclick="" data-tiara-layer="together" data-tiara-action-name="사이드 메뉴 놀이터 소개_클릭" class="link_sidesub" href="/auroville/together">놀이터 소개</a>
                                 </li>
                                 <li>
                                     <a routerlink="/magazines" reloadonduplicatedclick="" data-tiara-layer="magazine" data-tiara-action-name="사이드 메뉴 매거진_클릭" class="link_sidesub" href="/magazines">매거진</a>
@@ -174,44 +174,35 @@
         <!--메인 시작-->
         <span id="rootContent">
             <router-outlet></router-outlet>
-            <user-header>
-                <div id="dkContent" class="cont_mypage">
+            <ng-component>
+                <div id="dkContent" class="cont_declare">
                     <div id="mArticle">
-                        <div class="mypage_cont">
-                            <h2 class="screen_out">마이페이지</h2>
-                            <div data-tiara-layer="user" class="group_profile">
-                                <h3 class="screen_out">내 프로필 정보</h3>
-                                <div class="area_name">
-                                    <div class="link_myprofile">
-                                        <strong class="txt_nick">학생/교사</strong>
-                                        <div class="box_name">
-                                            <strong class="txt_name"> 닉네임 </strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="area_thumb">
-                                    <a routerlink="badges" data-tiara-layer="talk_badge" data-tiara-action-name="스탬프_클릭" class="link_badge" href="/my/badges">
-                                        <span class="badge_thumb">
-                                            <img class="img_thumb" src="https://mud-kage.kakaocdn.net/dn/cdS2zq/btqcKJyBiPS/SDkrVVYcKkxHXkcD8l68i0/img.png" alt="카카오같이가치에 오신 것을 환영합니다! 세상의 변화를 만드는 활동에 함께해요.">
-                                        </span>
-                                    </a>
-                                    <a data-tiara-layer="profile_img" data-tiara-action-name="프로필수정_클릭" class="link_thumb" href="/preferences/profile">
-                                        <span class="profile_thumb">
-                                            <img profileimagecheck="" alt="프로필 사진" class="img_thumb" src="https://t1.kakaocdn.net/together_image/common/avatar/avatar04.png">
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="area_setting">
-                                    <a data-tiara-layer="setting" data-tiara-action-name="설정_클릭" routerlink="/preferences" class="link_setting" href="/preferences">
-                                        <span class="screen_out">프로필</span> 설정
-                                    </a>
-                                </div>
+                        <div class="wrap_withdraw">
+                            <h2 id="dkBody" class="tit_withdraw">카카오놀이터 탈퇴</h2>
+                            <p class="txt_withdraw">탈퇴 시 삭제되는 정보를 확인해 주세요.</p>
+                            <div class="bg_withdraw"></div>
+                            <div class="area_info">
+                                <strong class="tit_info">1. 삭제되는 정보</strong>
+                                <p class="desc_info">프로필 이미지, 닉네임, 전화번호, 작성한 댓글과 게시물</p>
+                                <strong class="tit_info">2.삭제되지 않는 정보</strong>
+                                <ul class="list_info">
+                                    <li class="desc_info">
+                                        <strong class="item_info">1) 기부내역</strong> 소득세법 제 160조 3항 '기부금 영수증 발급명세의 작성·보관의무'에 의거하여 기부하신 내역을 5년간 보관합니다.
+                                    </li>
+                                    <li class="desc_info">
+                                        <strong class="item_info">2) 모금함 및 프로젝트팀 정보</strong> 기부자들의 기부금과 연결된 정보이기 때문에, 제안하신 모금함 콘텐츠 정보와 해당 모금함의 프로젝트팀 정보는 삭제되지 않습니다.
+                                    </li>
+                                </ul>
                             </div>
-                            <!--프로필 까지-->
+                            <div class="box_gif"></div>
+                            <p class="txt_bye">위 내용을 모두 확인하셨다면<br>아래 탈퇴 버튼을 통해 탈퇴 하실 수 있습니다.</p>
+                            <div class="wrap_btn">
+                                <button type="button" class="btn_withdraw">탈퇴하기</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </user-header>
+            </ng-component>
         </span>
         <!--메인 끝-->
         <hr class="hide">
@@ -222,7 +213,7 @@
                     <div class="inner_wrap">
                         <div class="cont_banner">
                             <strong class="tit_banner">같이하면 더 가치있는 일, 카카오톡으로 받아보세요.</strong>
-                            <p class="desc_banner">같이가치 채널의 마케팅과 광고 메시지를 받아볼 수 있습니다.</p>
+                            <p class="desc_banner">놀이터 채널의 마케팅과 광고 메시지를 받아볼 수 있습니다.</p>
                         </div>
                         <button class="btn_talk">
                             <i class="ico_channel"></i> 카카오톡으로 소식받기
